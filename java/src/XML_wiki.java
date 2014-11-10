@@ -1,9 +1,7 @@
-package AnchortextAndStatistika;
+package AnchorTextAndStatistics;
 
 import java.io.*;
 import java.util.regex.*;
-
-
 
 public class XML_wiki 
 {
@@ -14,14 +12,12 @@ public class XML_wiki
 
 	private String path;				//wikipedia xml dump path
 	private File_with_anchor_txt file;	
-	private Record_list record_list;
 	
 	//constructor
-	public XML_wiki(String path, File_with_anchor_txt file, Record_list record_list)
+	public XML_wiki(String path, File_with_anchor_txt file)
 	{
 		this.path = path;
 		this.file = file;
-		this.record_list = record_list;
 	}
 	
 	//Method read wikipedia dump and searching for page_title, page_linka and page_anchor
@@ -32,7 +28,7 @@ public class XML_wiki
 		int k = 0;
 
 		Pattern p_title = Pattern.compile("(<title>)(.+)(</title>)");			//compile regular expression for finding page title
-		Pattern p_anchor = Pattern.compile("\\[\\[([^:\\]]+?)\\|(.+?)\\]\\]"); 	//compile regular expression for anchor and link
+		Pattern p_anchor = Pattern.compile("\\[\\[([^:\\]]+?)\\|(.+?)\\]\\]|\\[\\[([^:\\|]+?)\\]\\](\\p{L}*)");	//compile regular expression for anchor and link
 		Matcher m_title = null;
 		Matcher m_anchor = null;
 		
@@ -41,7 +37,6 @@ public class XML_wiki
 		    ins = new FileInputStream(path);
 		    r = new InputStreamReader(ins, "UTF-8"); 
 		    br = new BufferedReader(r);
-		    String page_title = null;
 		    
 		    while ((s = br.readLine()) != null)// && i < 100) 
 		    {	//System.out.println(s);	
@@ -49,17 +44,19 @@ public class XML_wiki
 		    	while(m_title.find())	// if page title is found
 		    	{
 		    		if(j>0)	{ file.file_new_line();	}	// new page title at new line 
-		    		page_title = m_title.group(2).trim();
-		    		file.add_page_title(page_title);
+		    		file.add_page_title(m_title.group(2).trim());	//write page title to the file
 		    		j++;
 		    	}
 		    	
 	    		m_anchor = p_anchor.matcher(s);
 		    	while(m_anchor.find())	//if page anchor and link is found
 		    	{
-	    			String page_link = m_anchor.group(1).trim();
-		    		String page_anchor = m_anchor.group(2).trim();
-		    		file.add_page_anchor(page_link, page_anchor);
+	    			//group 1 = anchor_link	//group 2 = anchor_text	//group 3 = anchor_link when anchor_text is not presented
+		    		//group 4 = text after anchor when anchor_text is not presented
+		    		if(m_anchor.group(3) != null)	//if anchor text is not presented
+		    		{	file.add_page_anchor(m_anchor.group(3).trim(), m_anchor.group(3).trim().concat(m_anchor.group(4)));	}
+		    		else
+		    		{	file.add_page_anchor(m_anchor.group(1).trim(), m_anchor.group(2).trim());	}
 		    		k++;
 		    	}
 		    	i++;

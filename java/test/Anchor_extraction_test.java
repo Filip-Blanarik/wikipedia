@@ -6,9 +6,8 @@ import java.io.*;
 
 import org.junit.Test;
 
-import AnchortextAndStatistika.File_with_anchor_txt;
-import AnchortextAndStatistika.Record_list;
-import AnchortextAndStatistika.XML_wiki;
+import AnchorTextAndStatistics.File_with_anchor_txt;
+import AnchorTextAndStatistics.XML_wiki;
 
 
 
@@ -20,11 +19,10 @@ public class Anchor_extraction_test {
 		String file_input = "../data/sample_input_enwiki-pages-articles-123.xml";
 		String file_output = "../data/anchor_test.txt";
 		
-		Record_list record_list = 	new Record_list();
-		BufferedWriter bw = 		new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file_output, true),"UTF-8"));
+		BufferedWriter bw = 		new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file_output, true),"UTF8"));
 		BufferedReader br = 		new BufferedReader(new InputStreamReader(new FileInputStream(file_output), "UTF8"));
-		File_with_anchor_txt file = new File_with_anchor_txt(file_output, bw, br);
-		XML_wiki xmlw = 			new XML_wiki(file_input, file, record_list);
+		File_with_anchor_txt file = new File_with_anchor_txt(file_output, bw, br, null);
+		XML_wiki xmlw = 			new XML_wiki(file_input, file);
 		
 		file.erase_file();	
 		xmlw.read_wiki();
@@ -38,7 +36,7 @@ public class Anchor_extraction_test {
 		setUp();		
 	
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("../data/anchor_test.txt"), "UTF8"));
-		BufferedReader br2 = new BufferedReader(new InputStreamReader(new FileInputStream("../data/sample_output_anchor_link.txt"), "UTF8"));
+		BufferedReader br2 = new BufferedReader(new InputStreamReader(new FileInputStream("../data/sample_output_anchor_link_all_links.txt"), "UTF8"));
 		
 		String str_real_output = "";
 		String str_expected_output = "";
@@ -65,7 +63,7 @@ public class Anchor_extraction_test {
 		//System.out.println(str_real_output);
 		//System.out.println(str_expected_output);
 		
-		assertEquals(str_expected_output, str_real_output);
+		assertEquals(str_expected_output.substring(1), str_real_output);
 	}
 		
 
