@@ -1,0 +1,99 @@
+﻿geomorphology	1	1
+Trinity	1	1
+Senec District	1	1
+Dunajské luhy Protected Landscape Area	1	1
+FC Senec	1	1
+Senj	1	1
+vineyards	1	1
+Treaty of Trianon	1	1
+Galanta	1	1
+Great Moravia	1	1
+geomorphology	1	1
+Trinity	1	1
+Senec District	1	1
+Dunajské luhy Protected Landscape Area	1	1
+FC Senec	1	1
+Senj	1	1
+vineyards	1	1
+Treaty of Trianon	1	1
+Galanta	1	1
+Great Moravia	1	1
+Little Carpathians	2	2
+Austria	2	2
+Above mean sea level	1	1
+Danubian Lowland	1	1
+Benes Decrees	1	1
+Győr Basin	1	1
+Levice	1	1
+Czechoslovakia	1	1
+Dudince	1	1
+Janko Alexy	1	1
+Šúr	1	1
+Danube Swabians	1	1
+Rajka	1	1
+Pezinok District	1	1
+bell (instrument)	1	1
+Austro-Hungarian	1	1
+Matthias Corvinus	1	1
+Renaissance architecture	1	1
+Hungary	2	3
+town twinning	1	1
+Svätý Jur	1	1
+Ottoman Turks	1	1
+Roman Catholicism	1	1
+Bratislava Region	2	2
+Renaissance art	1	1
+Slovaks	1	1
+Bratislava	2	5
+Kittsee	1	1
+Prague	1	2
+Budapest	1	2
+Mosonmagyaróvár	1	1
+manor house	1	1
+Danubian Flat	1	1
+census	1	1
+Kingdom of Hungary	2	2
+Germany	1	1
+Western Carpathians	1	1
+World War II	1	1
+Neusiedl Basin	1	1
+bell tower	1	1
+St. George	1	1
+stained glass	1	1
+Central European Time	2	2
+Quadi	1	1
+Baroque architecture	1	1
+protected area	1	1
+Topoľčany	1	1
+Pressburg	1	1
+Miklós Horthy	1	1
+Vienna	1	1
+Dunajská Streda	1	1
+Slovakia	3	3
+Žilina	1	1
+Central European Summer Time	2	2
+Danube Plain (Serbia)	1	1
+Komárno	1	1
+Croatia	1	1
+Modra	1	1
+Slovak car registration plates	2	2
+Hallstatt period	1	1
+Velvet Divorce	1	1
+First Vienna Award	1	1
+Motorway D1 (Slovakia)	1	1
+Little Alföld	1	1
+Piešťany	1	1
+Piarist	1	1
+Parndorf	1	1
+Gothic architecture	1	1
+Church of Saint Nicholaus Senec	1	1
+Danubian Hills	1	1
+Saint George and the Dragon	1	1
+Nové Zámky	1	1
+Pezinok	2	2
+monastery	1	1
+Danube	1	1
+free town	1	1
+Archaeological	1	1
+Czechoslovak	1	1
+German language	1	1
