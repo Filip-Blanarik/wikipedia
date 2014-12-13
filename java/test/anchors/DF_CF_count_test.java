@@ -34,7 +34,7 @@ public class DF_CF_count_test {
 	JTextArea jTextArea1 = new javax.swing.JTextArea();
         
         List<Page> record_list = new ArrayList<Page>();
-	String file_input = "../data/sample_output_anchor_link_all_links.txt";
+	String file_input = "../data/program_anchor_output.txt";
 	String file_output = null;
 	BufferedReader brstat = new BufferedReader(new InputStreamReader(new FileInputStream(file_input), "UTF8"));
 	File_with_anchor_txt fa	= new File_with_anchor_txt(file_output, null, brstat, record_list,jTextArea1);
